@@ -2,7 +2,7 @@ import baseUrl from "../../utils/environment/Environment";
 
 export default HttpService = {
 
-    
+
     /** Method to call GET http API
      * @param functionName name of th API 
      * @param params json data
@@ -12,13 +12,13 @@ export default HttpService = {
     async callFetchGet(functionName) {
         try {
             let response = await fetch(baseUrl + functionName, {
-                method: 'GET'
+                method: 'GET',
             })
             let responseJson = await response.json();
             return responseJson;
         }
         catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }
 

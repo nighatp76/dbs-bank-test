@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, TextInput } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, TextInput } from 'react-native';
 import { PostListContext } from '../contextAPI/contextProvider';
 
 const Search = (props: any) => {
@@ -8,9 +8,9 @@ const Search = (props: any) => {
   let totalPosts = props.data;
 
   const onInputChange = (e: any) => {
-    setText(e)
+    setText(e);
     setTimeout(() => {
-      searchText(e)
+      searchText(e);
     }, 500);
   }
 
@@ -23,10 +23,9 @@ const Search = (props: any) => {
   const searchText = (e: string) => {
     let currText = e;
     let filteredName = totalPosts.filter((item: any) => {
-      return item.body.match(currText)
+      return item.body.match(currText);
     })
-    console.log(filteredName)
-    console.log('total', totalPosts)
+
     if (!currText || currText === '') {
       updatePostData(totalPosts);
     } else if (!Array.isArray(filteredName) && !filteredName.length) {
@@ -35,7 +34,7 @@ const Search = (props: any) => {
       updatePostData(filteredName)
     }
   }
-  
+
   return (
     <SafeAreaView>
       <View style={styles.searchContainer}>
@@ -57,14 +56,14 @@ const Search = (props: any) => {
 }
 const styles = StyleSheet.create({
   searchContainer: {
-    margin: 10
+    margin: 10,
   },
 
   input: {
     paddingVertical: 5,
     paddingHorizontal: 10,
     borderWidth: 1,
-    borderColor: '#000'
+    borderColor: '#000',
   },
 
   button: {
@@ -72,9 +71,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#DDDDDD",
     padding: 10,
     marginVertical: 10,
-    width: 120
+    width: 120,
   }
 })
 export default Search;
+
 
 

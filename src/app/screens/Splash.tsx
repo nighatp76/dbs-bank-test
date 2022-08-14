@@ -5,11 +5,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const Splash = (props: any) => {
 
   useEffect(() => {
-    moveForward()
+    moveForward();
   }, []);
   const moveForward = async () => {
     setTimeout(() => {
-      props.navigation.navigate('Home')
+      props.navigation.navigate('Home');
     }, 2000);
 
   }
@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'center',
     marginTop: 50,
-
   },
   tile: {
     textAlign: 'right',
@@ -38,4 +37,4 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
 })
-export default Splash
+export default Splash;

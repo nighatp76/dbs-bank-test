@@ -1,7 +1,10 @@
-import React, { useReducer, createContext } from 'react'
-import App from '../../../App'
+import React, { useReducer, createContext } from 'react';
+import App from '../../../App';
 import { DataReducer, initialState } from '../reducer/Reducer';
 import { actions } from '../action/Action';
+import { LogBox } from "react-native";
+ 
+LogBox.ignoreAllLogs();
 
 export const PostListContext = createContext();
 
